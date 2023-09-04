@@ -1,0 +1,9 @@
+@use 'design' as *;
+
+.code {
+    .error-text {
+        width: 100%;
+        min-height: 1rem;
+        color: $color-red-accent;
+    }
+}

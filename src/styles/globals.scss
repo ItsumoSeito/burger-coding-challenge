@@ -1,0 +1,77 @@
+@use 'design' as *;
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: rgb(30, 41, 59);
+    background: linear-gradient(
+        90deg,
+        rgba(30, 41, 59, 1) 0%,
+        rgba(9, 56, 121, 1) 73%
+    );
+}
+
+#__next {
+    width: 100%;
+    height: 100%;
+    font-size: 16px;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+}
+
+#sheet {
+    width: 100%;
+    height: 100%;
+}
+
+.currency {
+    &::after {
+        content: ' €';
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.modal {
+    @include flex-center-center;
+}
+
+.modal__card {
+    width: 50vw;
+    height: 50vh;
+    background-color: #91b24c;
+}
+
+.modal__content {
+    @include flex-center-center;
+
+    width: 100%;
+    height: 100%;
+}
+
+.modal__image-container {
+    width: 50%;
+    height: 50%;
+}
+
+.modal__title {
+    @include flex-center-center;
+    width: 100%;
+
+    p {
+        font-size: 2rem;
+        font-weight: 500;
+        color: white;
+    }
+}

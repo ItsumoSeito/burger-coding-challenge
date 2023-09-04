@@ -1,0 +1,97 @@
+@use 'design' as *;
+
+@mixin defaultControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+
+    .label {
+        @include flex-end-center;
+        width: 50%;
+        font-size: 1.2rem;
+        color: #ffffff;
+    }
+
+    .select {
+        width: 50%;
+    }
+}
+
+.burger-item {
+    @include flex-center-center;
+    width: 100%;
+    min-height: 30rem;
+    background-color: $light-transparent-background;
+    border-radius: $border-radius-md;
+    box-shadow: 1px 1px 10px 0px $dark-transparent-background;
+
+    .hero-image {
+        @include flex-center-center;
+        width: 40%;
+        height: 100%;
+
+        img {
+            border-top-left-radius: $border-radius-md;
+            border-bottom-left-radius: $border-radius-md;
+        }
+    }
+
+    .details {
+        @include flex-start-start;
+        flex-direction: column;
+        width: calc(60% - 2rem);
+        color: #ffffff;
+        gap: 1.3rem;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        p {
+            margin: 0;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 2.6rem;
+            font-family: $font-lobster;
+        }
+
+        .ingredients {
+            @include flex-start-center;
+            gap: 0.5rem;
+        }
+
+        .subtotal {
+            font-weight: bold;
+            font-size: 1.5rem;
+            font-family: $font-lobster;
+            font-weight: 200;
+        }
+
+        .side-controls {
+            @include defaultControl;
+        }
+
+        .size-controls {
+            @include defaultControl;
+        }
+
+        .amount-controls {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            .amount {
+                width: 15%;
+            }
+
+            .add-button {
+                width: 30%;
+            }
+        }
+    }
+}

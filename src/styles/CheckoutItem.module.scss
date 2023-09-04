@@ -1,0 +1,105 @@
+@use 'design' as *;
+
+@mixin checkoutItemLine {
+    @include flex-end-center;
+    width: 100%;
+
+    .price {
+        width: 30%;
+        text-align: end;
+    }
+}
+
+.item {
+    @include flex-center-center;
+    min-height: 12rem;
+    background-color: $light-transparent-background;
+    width: 100%;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: $border-radius-md;
+
+    p {
+        margin: 0;
+    }
+
+    .image {
+        @include flex-center-center;
+        width: 10rem;
+        height: 10rem;
+
+        img {
+            border-radius: $border-radius-md;
+        }
+    }
+
+    .details {
+        @include flex-center-center;
+        flex-direction: column;
+        width: calc(60% - 1rem);
+        padding: 0.5rem;
+        gap: 0.6rem;
+
+        .burger {
+            @include checkoutItemLine;
+        }
+
+        .side-dish {
+            @include checkoutItemLine;
+
+            .name {
+                &::before {
+                    content: '+ ';
+                }
+            }
+        }
+
+        .subtotal-divider {
+            background-color: white;
+        }
+
+        .sub-total {
+            @include flex-between-center;
+            width: 100%;
+
+            .amount {
+                &::before {
+                    content: 'x';
+                }
+            }
+        }
+
+        .multiplied-subtotal-divider-container {
+            @include flex-end-center;
+            width: 100%;
+
+            .multiplied-subtotal-divider {
+                width: 40%;
+                background-color: white;
+            }
+        }
+
+        .multiplied-subtotal {
+            @include flex-end-center;
+            width: 100%;
+
+            .price {
+                font-size: 1.1rem;
+                font-weight: bolder;
+            }
+        }
+
+        .delete {
+            @include flex-end-center;
+            width: 100%;
+
+            button {
+                width: 2rem;
+                height: 2rem;
+                padding: 0;
+                background-color: transparent;
+            }
+        }
+    }
+}
